@@ -1,3 +1,5 @@
+#lang scheme
+
 ;; Exercise 1.7
 ;; The good-enough? test used in computing square roots will not be very effective
 ;; for finding the square roots of very small numbers. Also, in real computers,
@@ -30,12 +32,10 @@
 ; and the next is less than 0.001 times the original guess.
 (define (new-good-enough? guess x)
   (< (abs (- (improve guess x) guess))
-     (abs (* guess 0.001)))
+     (abs (* guess 0.001))))
 
 ; This works better for both small and large numbers because the test is relative to
 ; the size of the guess. This means that for a very small number, we will enjoy increased
 ; precision, while for a large number the function will be very precise yet still terminate
 ; at some point.
-
-
 
