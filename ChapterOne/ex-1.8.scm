@@ -28,14 +28,19 @@
 ; Same good-enough function as exercise 1.7.
 (define (good-enough? guess x)
   (< (abs (- (improve guess x) guess))
-     (abs (* guess 0.001))))
+     (abs (* guess 0.001)))) ; make this number smaller to increase precision
 
 (define (cube-root x)
   (cube-root-iter 1.0 x))
 
 (cube-root 1) ; should be 1
+; 1.0
+
 (cube-root 8) ; should be 2
+; 2.0030460006435002
+
 (cube-root 27); should be 3
+; 3.0037346267695018
 
 
 
